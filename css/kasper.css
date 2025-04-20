@@ -485,6 +485,7 @@ header nav .form i {
 .portfolio .shuffle {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .portfolio .shuffle li {
@@ -497,6 +498,25 @@ header nav .form i {
 .portfolio .shuffle li:hover {
     background-color: var(--main-color);
     color: white;
+}
+
+@media (max-width: 376px) {
+    .portfolio .shuffle {
+        overflow-x: auto;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .portfolio .shuffle li {
+        display: inline-block;
+        min-width: max-content;
+    }
+}
+
+.portfolio .shuffle::-webkit-scrollbar {
+    display: none;
 }
 
 .portfolio .imgs-container {
